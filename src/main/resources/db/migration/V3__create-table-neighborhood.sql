@@ -1,4 +1,4 @@
-CREATE TABLE t_event_street (
+CREATE TABLE t_event_neighborhood (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     city_id UUID NOT NULL,
     name VARCHAR(255) NOT NULL,
