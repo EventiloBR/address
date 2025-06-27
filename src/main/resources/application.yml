@@ -1,3 +1,15 @@
 spring:
   application:
     name: address
+  flyway:
+    baseline-on-migrate: true
+    enabled: true
+    location: classpath:db/migration
+  datasource:
+    url: jdbc:postgresql://localhost:5432/address
+    username: postgres
+    password: password
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
