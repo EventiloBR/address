@@ -1,5 +1,6 @@
 package com.eventilobr.address.domain.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -23,8 +24,13 @@ public class Address {
 
     @Id @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+    @Column(name = "zip_code")
+    private String zipCode;
+    @Column(name = "address")
     private String address;
+    @Column(name = "number")
     private String number;
+    @Column(name = "complement")
     private String complement;
 
     @ManyToOne(fetch = FetchType.LAZY)
