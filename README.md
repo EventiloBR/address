@@ -56,10 +56,30 @@ docker-compose up --build
 ````bash
 src/
 ├── main/
-│   ├── java/
-│   │   └── com/eventilobr/address/   
-│   └── resources/                   
-└── test/      
+│ ├── java/
+│ │ └── com/eventilobr/address/
+│ │ │ ├── application/
+│ │ │ │ ├── address/ # UseCases de Address
+│ │ │ │ ├── city/ # UseCases de City
+│ │ │ │ ├── neighborhood/ # UseCases de Neighborhood
+│ │ │ │ └── state/ # UseCases de State
+│ │ │ ├── domain/
+│ │ │ │ ├── entity/ # Entidades do domínio
+│ │ │ │ └── exception/ # Exceções personalizadas
+│ │ │ ├── infrastructure/
+│ │ │ │ ├── controller/
+│ │ │ │ │ ├── impl/ # Implementações dos controllers
+│ │ │ │ │ ├── request/ # DTOs de entrada
+│ │ │ │ │ ├── response/ # DTOs de saída
+│ │ │ │ │ └── AddressController.java
+│ │ │ │ ├── repository/ # Interfaces para persistência
+│ │ │ │ ├── security/ # Configurações de segurança
+│ │ │ │ ├── service/ 
+│ │ │ │ │ ├── impl/ # Implementação das services
+│ │ │ │ │ └── AddressService.java
+│ │ └── AddressApplication.java
+│ └── resources/ # Arquivos de configuração (application.yml, etc.)
+└── test/ # Testes automatizados   
 ````
 
 ---
