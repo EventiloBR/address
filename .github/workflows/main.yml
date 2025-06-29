@@ -27,4 +27,4 @@ jobs:
         env:
           GITHUB_CLIENT_ID: ${{ secrets.CLIENT_ID }}
           GITHUB_CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-        run: ./gradlew clean build
+        run: ./gradlew clean build -Dspring.profiles.active=test
