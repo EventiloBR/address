@@ -1,5 +1,6 @@
 package com.eventilobr.address.domain.entity;
 
+import com.eventilobr.address.infrastructure.controller.request.AddressRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -24,5 +25,9 @@ public class State {
     private UUID id;
     @Column(name = "name")
     private String name;
+
+    public State(AddressRequest request) {
+        this.name = request.state();
+    }
 
 }

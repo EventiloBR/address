@@ -1,5 +1,6 @@
 package com.eventilobr.address.domain.entity;
 
+import com.eventilobr.address.infrastructure.controller.request.AddressRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -31,5 +32,9 @@ public class Neighborhood {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "city_id", nullable = false)
     private City city;
+
+    public Neighborhood(AddressRequest request) {
+        this.name = request.neighborhood();
+    }
 
 }
